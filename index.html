@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网址导航</title>
+    <style>
+        /* 霓虹色流动背景 */
+        body {
+            background: linear-gradient(270deg, #ff00ff, #00ffff, #ff00ff, #00ffea, #ff00ff);
+            background-size: 400% 400%;
+            animation: neonFlow 8s ease infinite;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes neonFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 容器居中 */
+        .container {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            100% { opacity: 1; }
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 48px;
+            margin-bottom: 50px;
+            color: #fff;
+            text-shadow: 0 0 15px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            animation: glowAnimation 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glowAnimation {
+            from { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+            to { text-shadow: 0 0 40px #ff00ff, 0 0 60px #ff00ff; }
+        }
+
+        /* 按钮样式 */
+        .neon-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: white;
+            border: 2px solid #00ffea;
+            border-radius: 5px;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #00ffea, 0 0 40px #00ffea, 0 0 80px #00ffea;
+            opacity: 0;
+            animation: fadeInButtons 2.5s forwards ease-out;
+        }
+
+        @keyframes fadeInButtons {
+            100% { opacity: 1; }
+        }
+
+        /* 按钮呼吸动效 */
+        .neon-button:hover {
+            background-color: #00ffea;
+            color: #000;
+            box-shadow: 0 0 20px #00ffea, 0 0 60px #00ffea, 0 0 100px #00ffea;
+            transform: scale(1.1);
+        }
+
+        /* 按钮内部动画 */
+        .neon-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .neon-button:hover:before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>导航页</h1>
+        <div class="links">
+            <a href="https://libohan-ha.github.io/wenan3/" class="neon-button" target="_blank">高质量文案</a>
+            <a href="https://libohan-ha.github.io/wenda2/" class="neon-button" target="_blank">问答</a>
+            <a href="https://libohan-ha.github.io/xinli/" class="neon-button" target="_blank">心理医生</a>
+            <a href="https://libohan-ha.github.io/zhanan3/" class="neon-button" target="_blank">高情商回复</a>
+            <a href="https://libohan-ha.github.io/duiren3/" class="neon-button" target="_blank">怼人</a>
+            <a href="https://libohan-ha.github.io/cj/" class="neon-button" target="_blank">词语新解</a>
+            <a href="https://libohan-ha.github.io/-/" class="neon-button" target="_blank">每日打卡</a>
+        </div>
+    </div>
+</body>
+</html>
